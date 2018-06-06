@@ -5,6 +5,7 @@
 <script>THREEx.ArToolkitContext.baseURL = 'https://jeromeetienne.github.io/AR.js/three.js/'</script>
 <script>
 
+
 AFRAME.registerComponent('gps-position', {
 	
 	watchId: null,
@@ -403,8 +404,11 @@ window.onload = function(){
 		
 		<a-camera id="camera" user-height="1.6" gps-position compass-rotation><!--  --></a-camera>
 		
-		<a-sphere gps-place="longitude: -70.822848; latitude: 42.871713"></a-sphere>
-		<a-sphere gps-place="longitude: -70.822848; latitude: 42.871713"></a-sphere>
+		<a-assets>
+    <a-asset-item id="scene" src="https://bumble-ish.github.io/github.io/scene.gltf"></a-asset-item>
+			
+		<<a-entity gltf-model="#scene" gps-place="longitude: -70.822848; latitude: 42.871713"></a-entity>
+		<<a-entity gltf-model="#scene" gps-place="longitude: -70.822848; latitude: 42.871713"><</a-entity>
 		
 	</a-scene>
 </body>
