@@ -5,7 +5,6 @@
 <script>THREEx.ArToolkitContext.baseURL = 'https://jeromeetienne.github.io/AR.js/three.js/'</script>
 <script>
 
-
 AFRAME.registerComponent('gps-position', {
 	
 	watchId: null,
@@ -400,8 +399,6 @@ window.onload = function(){
 		</div>
 	</div>
 	
-	
-	
 	<a-scene embedded artoolkit='sourceType: webcam;'><!--  -->
 		
 		<a-camera id="camera" user-height="1.6" gps-position compass-rotation><!--  --></a-camera>
@@ -410,6 +407,5 @@ window.onload = function(){
 		<a-sphere gps-place="longitude: -70.822848; latitude: 42.871713"></a-sphere>
 		
 	</a-scene>
-		
 </body>
 </html>
