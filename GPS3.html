@@ -401,20 +401,15 @@ window.onload = function(){
 	</div>
 	
 	
+	
 	<a-scene embedded artoolkit='sourceType: webcam;'><!--  -->
 		
 		<a-camera id="camera" user-height="1.6" gps-position compass-rotation><!--  --></a-camera>
-  <a-assets>
-    <a-asset-item id="scene" src="github.io/scene.gltf"></a-asset-item>
-  </a-assets>
-  <a-entity gps-place="longitude: -70.822848; latitude: 42.871713"></a-entity>
-  
-    <a-entity mmd='outline: true' afterglow:2.0;>
-        <a-entity scale="0.03 0.03 0.03" gltf-model="#scene"></a-entity>
-      </a-entity>
-    </a-entity>
- 
-</a-scene>
+		
+		<a-sphere gps-place="longitude: -70.822848; latitude: 42.871713"></a-sphere>
+		<a-sphere gps-place="longitude: -70.822848; latitude: 42.871713"></a-sphere>
+		
+	</a-scene>
 		
 </body>
 </html>
