@@ -1,0 +1,31 @@
+<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"></script>
+<!--<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.0.2/dist/aframe-extras.min.js"></script>-->
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs='trackingMethod: best;'>
+    
+    <!-- define your gltf asset -->
+    <a-assets>
+      <a-asset-item id="dino" src="https://bumble-ish.github.io/github.io/scene.gltf"></a-asset-item>
+      <a-asset-item id="ms-text" src="https://cdn.rawgit.com/mskreuzer/cc2018_ar_assets/master/watertextblend.gltf"></a-asset-item>
+    </a-assets> 
+    
+    <a-marker preset='hiro'>
+      <a-entity gltf-model="#dino">scale="-0.2 -0.2 -0.2" rotation="-30 30 0"</a-entity>
+    </a-marker>
+    
+    <a-marker preset='kanji'>
+      <!--<a-text value="Media Solution goes AR!" position='-1 0 0' ></a-text>-->
+      <!--<a-entity gltf-model="#ms-text" scale="1 1 1"></a-entity>-->
+      <!-- Add your augmented reality here -->
+			<a-box position='0 0.5 0' material='opacity: 0.5; side:double; color:red;'>
+				<a-torus-knot radius='0.26' radius-tubular='0.05'>
+					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+				</a-torus-knot>
+      </a-box>
+    </a-marker>
+    
+    <!-- add a simple camera -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
