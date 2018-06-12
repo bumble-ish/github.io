@@ -1,10 +1,11 @@
+
 <html>
 <head>
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.min.js"></script>
 <script>THREEx.ArToolkitContext.baseURL = 'https://jeromeetienne.github.io/AR.js/three.js/'</script>
+<script src="//unpkg.com/aframe-animation-component@4.0.0-beta12/dist/aframe-animation-component.min.js"></script>
 <script>
-
 AFRAME.registerComponent('gps-position', {
 	
 	watchId: null,
@@ -101,8 +102,6 @@ AFRAME.registerComponent('gps-position', {
 	}
 	
 });
-
-
 AFRAME.registerComponent('compass-rotation', {
 	
 	lookControls: null,
@@ -257,8 +256,6 @@ AFRAME.registerComponent('compass-rotation', {
 	}
 	
 });
-
-
 AFRAME.registerComponent('gps-place', {
 	
 	cameraGpsPosition: null,
@@ -333,8 +330,6 @@ AFRAME.registerComponent('gps-place', {
 	
 	
 });
-
-
 window.onload = function(){
 	
 	var camera = document.getElementById('camera');
@@ -378,8 +373,6 @@ window.onload = function(){
 	});
 	
 };
-
-
 </script>
 </head>
 <body style='margin: 0px; overflow: hidden;'>
@@ -403,9 +396,12 @@ window.onload = function(){
 		
 		<a-camera id="camera" user-height="1.6" gps-position compass-rotation><!--  --></a-camera>
 		
-		<a-cylinder gps-place="longitude: -70.822848; latitude: 42.871713"></a-cylinder>
-		<a-cylinder gps-place="longitude: -70.822848; latitude: 42.871713"></a-cylinder>
-		
+		<a-sphere src="https://bumble-ish.github.io/github.io/Planets/sunmap.jpg" gps-place="longitude: -70.930017; latitude: 42.853827" animation="property: rotation; to: 360 00 360; dur: 10000; loop: true; easing: linear;"></a-sphere>
+	        <a-sphere src="https://bumble-ish.github.io/github.io/Balls/Billard Balls/thirteen.jpg" gps-place="longitude: -70.930156; latitude: 42.853904" animation="property: rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear;"></a-sphere>
+		<a-sphere src="https://bumble-ish.github.io/github.io/Planets/moonmap.jpg" gps-place="longitude: -70.930296; latitude: 42.853723" animation="property: rotation; to: 360 00 360; dur: 10000; loop: true; easing: linear;"></a-sphere>
+		<a-sphere src="https://bumble-ish.github.io/github.io/Planets/marsmap.jpg" gps-place="longitude: -70.930375; latitude: 42.853779" animation="property: rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear;"></a-sphere>
+	        <a-sphere src="https://bumble-ish.github.io/github.io/Planets/earth_atmos_4096.jpg" gps-place="longitude: -70.930296; latitude: 42.853723" animation="property: rotation; to: 360 00 360; dur: 10000; loop: true; easing: linear;"></a-sphere>
+	
 	</a-scene>
 </body>
 </html>
