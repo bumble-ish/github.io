@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<title>Hello, AR Cube!</title>
+	<title>Portal</title>
 	<!-- include three.js library -->
 	<script src='js/three.js'></script>
 	<!-- include jsartookit -->
@@ -108,11 +108,11 @@ function initialize()
 
 	// build markerControls
 	kanjiMarker = new THREE.Group();
-	scene.add(kanjiMarker);
+	scene.add(HiroMarker);
 	
-	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, kanjiMarker, {
+	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, hiroMarker, {
 		type : 'pattern',
-		patternUrl : "data/kanji.patt",
+		patternUrl : "data/hiro.patt",
 	})
 
 	// interpolates from last position to create smoother transitions when moving.
@@ -198,7 +198,7 @@ function update()
 		arToolkitContext.update( arToolkitSource.domElement );
 		
 	// additional code for smoothed controls
-	smoothedControls.update(kanjiMarker);
+	smoothedControls.update(hiroMarker);
 }
 
 
