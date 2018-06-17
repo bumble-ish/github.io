@@ -28,7 +28,7 @@ var scene, camera, renderer, clock, deltaTime, totalTime;
 
 var arToolkitSource, arToolkitContext, smoothedControls;
 
-var markerRoot1, markerRoot2;
+var patternArray, markerRootArray, markerGroupArray;
 
 var portal, portalMaterial;
 
@@ -107,12 +107,11 @@ function initialize()
 	////////////////////////////////////////////////////////////
 
 	// build markerControls
-	hiroMarker = new THREE.Group();
-	scene.add(HiroMarker);
-	
-	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, hiroMarker, {
-		type : 'pattern',
-		patternUrl : "data/hiro.patt",
+	let markerRoot = new THREE.Group();
+		markerRootArray.push( markerRoot );
+		scene.add(markerRoot);
+		let markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
+			type : 'pattern', patternUrl : "data/" + patternArray[i] + ".patt",
 	})
 
 	// interpolates from last position to create smoother transitions when moving.
@@ -198,7 +197,7 @@ function update()
 		arToolkitContext.update( arToolkitSource.domElement );
 		
 	// additional code for smoothed controls
-	smoothedControls.update(hiroMarker);
+	smoothedControls.update(markerRootArray);
 }
 
 
