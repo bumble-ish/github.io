@@ -54,7 +54,7 @@
 
         <a-assets>
             <video src="https://cors-anywhere.herokuapp.com/https://www.w3schools.com/html/mov_bbb.mp4"
-                rotation="90 180 0" preload="auto" id="vid" response-type="arraybuffer" loop
+                preload="auto" id="vid" response-type="arraybuffer" loop
                 crossorigin webkit-playsinline autoplay muted playsinline>
             </video>
         </a-assets>
@@ -64,13 +64,7 @@
             type='nft' url='https://bumble-ish.github.io/github.io/NFT-Files/Images/Bee/BeeS'
             smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
         >
-            <a-video
-                src="#vid"
-                position="0 0.2 0" 
-                width='300'
-                height='175'
-		>
-            </a-video>
+            <a-video  position="0 0.2 0" src="#vid" rotation="90 180 0"></a-video>
         </a-nft>
 		<a-entity camera></a-entity>
 	</a-scene>
